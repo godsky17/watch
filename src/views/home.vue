@@ -132,6 +132,7 @@ const showMenu = ref(false)
       </div>
     </div>
 
+    
     <!-- Mobile bottom nav -->
     <div class="md:hidden fixed bottom-0 left-0 right-0 bg-stone-900 border-t border-gray-800 flex justify-around py-2 z-50">
       <router-link to="/" class="flex flex-col items-center text-sm">
