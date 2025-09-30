@@ -122,22 +122,19 @@ onMounted(fetchMovieDetails)
             Chargement en cours...
           </div>
 
-          <!-- Erreur -->
           <div v-else-if="error" class="text-center py-10 text-red-500">
             {{ error }}
           </div>
 
-          <!-- Film -->
           <div v-else-if="movie" >
             <div class="p-5 rounded-lg mb-5 flex align-middle justify-start min-h-[50vh] bg-center bg-cover bg-no-repeat" :style="{ backgroundImage: `url(https://image.tmdb.org/t/p/w500${movie.poster_path})` }">
               <div class="my-auto">
                 <h1 class="text-4xl sm:text-5xl md:text-7xl mb-5">{{ movie.title }}</h1>
-                <p class="mb-3 text-lg sm:text-xl">{{ movie.tagline || '—' }}</p>
+                <p v-if="movie.tagline" class="mb-3 text-lg sm:text-xl">{{ movie.tagline }}</p>
                 <p class="max-w-[368px] pb-5 text-sm sm:text-base">{{ movie.overview }}</p>
               </div>
             </div>
 
-            <!-- Section Nouveauté -->
             <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">Acteurs</h1>
             <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
               <CardAuthor
