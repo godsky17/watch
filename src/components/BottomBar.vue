@@ -24,8 +24,10 @@
         Coming
       </div>
       <div class="flex flex-col items-center text-sm">
+        <router-link to="/" class="flex flex-col items-center text-sm">
         <img :src="discoverIcone" class="w-6 h-6" />
         Découvrir
+        </router-link>
       </div>
     </div>
 </template>
