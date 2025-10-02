@@ -8,8 +8,8 @@ import NavBar from "@/components/NavBar.vue"
 import BottomBar from "@/components/BottomBar.vue"
 /* LES VARIAVLES */
 const showMenu = ref(false)
-const API_KEY = "6a5223b1d5405b9dd581c9b784335c55"
-const BASE_URL = "https://api.themoviedb.org/3"
+const API_KEY = import.meta.env.VITE_API_KEY
+const BASE_URL = import.meta.env.VITE_BASE_URL
 const popularMovies = ref([])
 
 const route = useRoute()

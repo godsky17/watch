@@ -1,13 +1,5 @@
 <script setup>
 import { ref, onMounted } from "vue"
-import logoUrl from "../../public/asserts/images/watch.png"
-import favoriteIcone from "../../public/asserts/images/favorie.png"
-import comingIcone from "../../public/asserts/images/coming.png"
-import discoverIcone from "../../public/asserts/images/discover.png"
-import reglageIcone from "../../public/asserts/images/reglage.png"
-import logoutIcone from "../../public/asserts/images/logout.png"
-import rechercherIcone from "../../public/asserts/images/rechercher.png"
-import profileIcone from "../../public/asserts/images/profile.jpg"
 import CardMovie from "@/components/CardMovie.vue"
 import CardHorizontal from "@/components/CardHorizontal.vue"
 import NavBar from "@/components/NavBar.vue"
@@ -15,8 +7,8 @@ import BottomBar from "@/components/BottomBar.vue"
 import SideBar from "@/components/SideBar.vue"
 
 
-const API_KEY = "6a5223b1d5405b9dd581c9b784335c55"
-const BASE_URL = "https://api.themoviedb.org/3"
+const API_KEY = import.meta.env.VITE_API_KEY
+const BASE_URL = import.meta.env.VITE_BASE_URL
 
 const discoverList = ref([])
 const popularMovies = ref([])
