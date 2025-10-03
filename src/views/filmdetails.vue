@@ -111,7 +111,7 @@ onMounted(fetchMovieDetails)
                 <button type="submit" class="bg-red-600 hover:bg-red-700 px-4 py-2 rounded-lg text-sm font-medium">Envoyer</button>
               </form>
               <div class="space-y-3">
-                <Commentaire v-for="i in 4" :key="i" />
+               
               </div>
             </div>
           </div>
