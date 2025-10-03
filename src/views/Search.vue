@@ -35,7 +35,6 @@ async function fetchPopularMovies() {
     if (!response.ok) throw new Error("Erreur API")
 
     const data = await response.json()
-    // On garde seulement 6 films maximum
     popularMovies.value = data.results.slice(0, 6)
   } catch (error) {
     console.error("Erreur lors du fetch des films populaires :", error)
@@ -49,9 +48,6 @@ onMounted(() => {
 
 )
 
-watch(() => route.query.q, (newQ) => {
-  if (newQ) fetchSearch(newQ)
-})
 </script>
 
 <template>

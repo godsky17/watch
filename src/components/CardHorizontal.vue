@@ -13,8 +13,7 @@ defineProps({
 		<div class="flex align-middle px-3 py-5 gap-3">
 			<div 
 				class="rounded-[10px] min-w-[80px] h-[101px] bg-no-repeat bg-center bg-cover"
-					:style="{
-				backgroundImage: `url(https://image.tmdb.org/t/p/w300${similarMovie.backdrop_path})`
+				:style="{ backgroundImage: `url(https://image.tmdb.org/t/p/w300${similarMovie.backdrop_path})`
 				?? 'url(/fallback.jpg)' // image par défaut si pas de photo
 				}"
 				>

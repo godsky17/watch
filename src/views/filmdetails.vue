@@ -87,7 +87,7 @@ onMounted(fetchMovieDetails)
             <div class="rounded-lg mb-5 bg-opacity-20 flex align-middle justify-start min-h-[50vh] bg-cover bg-no-repeat" :style="{ backgroundImage: `url(https://image.tmdb.org/t/p/w500${movie.poster_path})` }">
               <div class="w-full myBg p-5">
                 <div class="my-auto">
-                  <h1 class="text-4xl sm:text-5xl md:text-7xl mb-5">{{ movie.title }}</h1>
+                  <h1 class="text-4xl sm:text-5xl md:text-7xl mb-5">{{ movie.title || movie.name }}</h1>
                   <p v-if="movie.tagline" class="mb-3 text-lg sm:text-xl">{{ movie.tagline }}</p>
                   <p class="max-w-[368px] pb-5 text-sm sm:text-base">{{ movie.overview }}</p>
                 </div>
