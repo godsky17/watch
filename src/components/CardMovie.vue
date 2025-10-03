@@ -3,6 +3,11 @@
     movie:{
       type: Object,
       required: true
+    },
+
+    type: {
+      type: String,
+      default: 'movie'
     }
   });
 
@@ -13,7 +18,7 @@
 </script>
 
 <template>
-<router-link :to="`/details/${movie.id}`">
+<router-link :to="`/details/${movie.id}/${type}`">
 <div class="relative rounded-[10px] w-full aspect-[174/231] bg-no-repeat bg-center bg-cover"
   :style="{ backgroundImage: `url(https://image.tmdb.org/t/p/w500${movie.poster_path})` }">
   <div class="bg-black bg-opacity-70 p-2 absolute bottom-0 left-0 w-full rounded-b-[8px] text-white text-sm sm:text-base">

@@ -17,6 +17,7 @@ const loading = ref(true)
 const error = ref(null)
 const actors = ref([])
 const similarMovies = ref([])
+const typeMovie = route.params.type ? route.params.type : "movie"
 
 const API_KEY = import.meta.env.VITE_API_KEY
 const BASE_URL = import.meta.env.VITE_BASE_URL
@@ -27,7 +28,7 @@ async function fetchMovieDetails() {
   try {
     // Lancer les 3 appels en parallèle
     const [detailsRes, creditsRes, similarRes] = await Promise.all([
-      fetch(`${BASE_URL}/movie/${movieId}?api_key=${API_KEY}&language=fr-FR`),
+      fetch(`${BASE_URL}/${typeMovie}/${movieId}?api_key=${API_KEY}&language=fr-FR`),
       fetch(`${BASE_URL}/movie/${movieId}/credits?api_key=${API_KEY}&language=fr-FR`),
       fetch(`${BASE_URL}/movie/${movieId}/similar?api_key=${API_KEY}&language=fr-FR`)
     ])
@@ -83,11 +84,13 @@ onMounted(fetchMovieDetails)
           </div>
 
           <div v-else-if="movie" >
-            <div class="p-5 rounded-lg mb-5 flex align-middle justify-start min-h-[50vh] bg-center bg-cover bg-no-repeat" :style="{ backgroundImage: `url(https://image.tmdb.org/t/p/w500${movie.poster_path})` }">
-              <div class="my-auto">
-                <h1 class="text-4xl sm:text-5xl md:text-7xl mb-5">{{ movie.title }}</h1>
-                <p v-if="movie.tagline" class="mb-3 text-lg sm:text-xl">{{ movie.tagline }}</p>
-                <p class="max-w-[368px] pb-5 text-sm sm:text-base">{{ movie.overview }}</p>
+            <div class="rounded-lg mb-5 bg-opacity-20 flex align-middle justify-start min-h-[50vh] bg-cover bg-no-repeat" :style="{ backgroundImage: `url(https://image.tmdb.org/t/p/w500${movie.poster_path})` }">
+              <div class="w-full myBg p-5">
+                <div class="my-auto">
+                  <h1 class="text-4xl sm:text-5xl md:text-7xl mb-5">{{ movie.title }}</h1>
+                  <p v-if="movie.tagline" class="mb-3 text-lg sm:text-xl">{{ movie.tagline }}</p>
+                  <p class="max-w-[368px] pb-5 text-sm sm:text-base">{{ movie.overview }}</p>
+                </div>
               </div>
             </div>
 
@@ -130,3 +133,10 @@ onMounted(fetchMovieDetails)
     <BottomBar />
   </div>
 </template>
+
+<style>
+.myBg{
+  background-color: black;
+  opacity: 50%;
+}
+</style>

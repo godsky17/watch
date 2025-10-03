@@ -13,11 +13,11 @@
             <p>Home</p>
           </router-link>
         </li>
-        <li class="flex items-center px-5 py-2 gap-3 text-[18px] cursor-pointer hover:bg-red-700">
+        <li class="hover:cursor-not-allowed flex items-center px-5 py-2 gap-3 text-[18px] cursor-pointer hover:bg-red-700">
           <img :src="favoriteIcone" width="25" />
           <p>Favories</p>
         </li>
-        <li class="flex items-center px-5 py-2 gap-3 text-[18px] cursor-pointer hover:bg-red-700">
+        <li class="hover:cursor-not-allowed flex items-center px-5 py-2 gap-3 text-[18px] cursor-pointer hover:bg-red-700">
           <img :src="comingIcone" width="25" />
           <p>Coming soon</p>
         </li>
@@ -28,11 +28,11 @@
 	        </router-link>
         </li>
         <li class="text-[20px] mb-5 ml-5 mt-10">Général</li>
-        <li class="flex items-center px-5 py-2 gap-3 text-[18px] cursor-pointer hover:bg-red-700">
+        <li class="hover:cursor-not-allowed flex items-center px-5 py-2 gap-3 text-[18px] cursor-pointer hover:bg-red-700">
           <img :src="reglageIcone" width="25" />
           <p>Réglages</p>
         </li>
-        <li class="flex items-center px-5 py-2 gap-3 text-[18px] cursor-pointer hover:bg-red-700">
+        <li class="hover:cursor-not-allowed flex items-center px-5 py-2 gap-3 text-[18px] cursor-pointer hover:bg-red-700">
           <img :src="logoutIcone" width="25" />
           <p>Déconnexion</p>
         </li>

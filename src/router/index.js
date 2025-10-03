@@ -10,7 +10,7 @@ import Discover from '@/views/discover.vue'
 
 const routes = [
 	{path: '/', component: Home},
-	{path: '/details/:id', name: 'MovieDetails', component: FilmDetails},
+	{path: '/details/:id/:type?', name: 'MovieDetails', component: FilmDetails},
 	{path: '/category/films', component: FilmsCat},
 	{path: '/category/series', component: SeriesCat},
 	{path: '/category/tv-shows', component: TvShowCat},

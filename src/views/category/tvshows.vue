@@ -70,7 +70,7 @@ onMounted(() => {
         <div class="md:col-span-3">
           <h1 class="text-red-800 text-4xl sm:text-5xl font-bold mb-5">Tv show</h1>
           <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
-            <CardMovie v-for="show in tvShows" :key="show.id" :movie="show" />
+            <CardMovie v-for="show in tvShows" :key="show.id" :movie="show" type="tv" />
           </div>
         </div>
 
