@@ -1,7 +1,7 @@
 # api
 
 
-[Demo]https://watch-blush-alpha.vercel.app/
+For preview [click here](https://watch-blush-alpha.vercel.app/)
 
 ## Project Setup
 
